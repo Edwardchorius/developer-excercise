@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain.Abstractions\Domain.Abstractions.csproj" />
+    <PackageReference Include="Ardalis.SmartEnum" Version="1.0.8" />
   </ItemGroup>
 
 </Project>

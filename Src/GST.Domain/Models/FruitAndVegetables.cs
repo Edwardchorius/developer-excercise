@@ -1,8 +1,9 @@
 ﻿using System;
+using GST.Domain.Models.Base;
 
 namespace GST.Domain.Models
 {
-    public class FruitAndVegetables
+    public class FruitAndVegetables : Entity
     {
         public FruitAndVegetables(string product, Price price)
         {

@@ -2,7 +2,7 @@
 using Domain.Abstractions.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Persistence.Abstractions.Models;
+using Persistence.Abstractions;
 using Pluralize.NET;
 
 namespace Persistence.Commands.EF.Configurations

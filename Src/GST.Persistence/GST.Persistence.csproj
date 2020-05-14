@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GST.Application.Commands\GST.Application.Commands.csproj" />
+    <ProjectReference Include="..\GST.Persistence.Commands\GST.Persistence.Commands.csproj" />
     <ProjectReference Include="..\Persistence.Abstractions\Persistence.Abstractions.csproj" />
   </ItemGroup>
 

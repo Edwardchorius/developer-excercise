@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Domain.Abstractions.Interfaces;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Persistence.Abstractions.Exceptions;
 using Persistence.Abstractions.Interfaces;
@@ -14,12 +13,14 @@ namespace Persistence.Commands.EF
 {
     public abstract class CommandDbContext : DbContext
     {
+        private readonly IMediator _mediator;
         private ITransaction _currentTransaction;
         private bool _disposed;
 
-        public CommandDbContext(DbContextOptions options)
+        public CommandDbContext(DbContextOptions options, IMediator mediator)
             : base(options)
         {
+            _mediator = mediator;
             _disposed = false;
         }
 

@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using Domain.Abstractions.Interfaces;
 
-namespace Persistence.Abstractions.Models
+namespace Persistence.Abstractions
 {
-    public abstract class DataModel<TId> : IIdentifiable<TId>, IEntity
+    public abstract class DataModel<TId> : IIdentifiable<TId>, ICreatable, IModifiable
     {
         public TId Id { get; private set; }
 

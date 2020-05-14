@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GST.Persistence.Commands;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
@@ -13,7 +15,9 @@ namespace GST.Api
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+            InitializeData(host);
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -22,5 +26,23 @@ namespace GST.Api
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+        private static void InitializeData(IHost host)
+        {
+            using (var scope = host.Services.CreateScope())
+            {
+                try
+                {
+                    var commandContext = scope.ServiceProvider.GetService<ProductCommandContext>();
+                    commandContext.Database.EnsureDeleted();
+                    commandContext.Database.EnsureCreated();
+                }
+                catch (Exception e)
+                {
+
+                    throw e;
+                }
+            }
+        }
     }
 }

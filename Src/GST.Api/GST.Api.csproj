@@ -5,7 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExceptionHandlingMiddleware\Web.ExceptionHandlingMiddleware.csproj" />
+    <ProjectReference Include="..\GST.Application.Commands\GST.Application.Commands.csproj" />
+    <ProjectReference Include="..\GST.Persistence\GST.Persistence.csproj" />
+    <ProjectReference Include="..\Mediator.DependencyRegistration\Mediator.DependencyRegistration.csproj" />
   </ItemGroup>
 
 

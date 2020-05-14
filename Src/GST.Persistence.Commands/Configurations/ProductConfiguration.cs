@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using GST.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace GST.Persistence.Commands.Configurations.FruitsAndVegetables
+namespace GST.Persistence.Commands.Configurations
 {
-    internal class FruitAndVegetablesConfiguration : BaseConfiguration<FruitAndVegetables>
+    internal class ProductConfiguration : BaseConfiguration<Product>
     {
-        public override void Configure(EntityTypeBuilder<FruitAndVegetables> builder)
+        public override void Configure(EntityTypeBuilder<Product> builder)
         {
             base.Configure(builder);
-
-            builder.OwnsOne(x => x.Deal);
 
             builder.OwnsOne(
                 x => x.Price,
@@ -27,6 +26,7 @@ namespace GST.Persistence.Commands.Configurations.FruitsAndVegetables
                     .Property(x => x.Value)
                     .HasColumnName($"{nameof(Price)}{nameof(Price.Value)}");
                 });
+
         }
     }
 }

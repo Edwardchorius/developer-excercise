@@ -7,11 +7,11 @@ using Persistence.Commands.EF;
 
 namespace GST.Persistence.Commands.Repositories
 {
-    internal class FruitAndVegetablesEfRepository<TEntity> : BaseEfMutatableRepository<TEntity>
+    internal class ProductEfRepository<TEntity> : BaseEfMutatableRepository<TEntity>
         where TEntity : Entity, IEntity
     {
-        public FruitAndVegetablesEfRepository(
-            FruitAndVegetablesCommandContext commandContext)
+        public ProductEfRepository(
+            ProductCommandContext commandContext)
             : base(commandContext)
         {
 

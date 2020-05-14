@@ -8,19 +8,22 @@ using Persistence.Abstractions.Interfaces;
 
 namespace GST.Persistence
 {
-    internal class FruitAndVegetablesDataUnitOfWork : IFruitAndVegetablesDataUnitOfWork
+    internal class ProductUnitOfWork : IProductDataUnitOfWork
     {
-        private readonly FruitAndVegetablesCommandContext _commandContext;
+        private readonly ProductCommandContext _commandContext;
 
-        public FruitAndVegetablesDataUnitOfWork(
-            FruitAndVegetablesCommandContext commandContext,
-            IMutatableRepository<FruitAndVegetables> fruitAndVegetables)
+        public ProductUnitOfWork(
+            ProductCommandContext commandContext,
+            IMutatableRepository<Product> products,
+            IMutatableRepository<Deal> deals)
         {
             _commandContext = commandContext;
-            FruitAndVegetables = fruitAndVegetables;
+            Products = products;
+            Deals = deals;
         }
 
-        public IMutatableRepository<FruitAndVegetables> FruitAndVegetables { get; }
+        public IMutatableRepository<Product> Products { get; }
+        public IMutatableRepository<Deal> Deals { get; }
 
         public bool HasActiveTransaction => _commandContext.HasActiveTransaction;
 

@@ -5,13 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.4" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GST.Domain\GST.Domain.csproj" />
-    <ProjectReference Include="..\Mediator.Abstractions\Mediator.Abstractions.csproj" />
-    <ProjectReference Include="..\Persistence.Abstractions\Persistence.Abstractions.csproj" />
+    <ProjectReference Include="..\Mediator.Behaviors.Persistence\Mediator.Behaviors.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

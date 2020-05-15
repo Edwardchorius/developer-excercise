@@ -3,7 +3,7 @@
 
 using Domain.Abstractions.Enums;
 
-namespace GST.Domain.Models
+namespace GST.Domain.Enums
 {
     public class Price : Enumeration<Price>
     {

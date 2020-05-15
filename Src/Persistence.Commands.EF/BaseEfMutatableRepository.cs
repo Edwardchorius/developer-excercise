@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Domain.Abstractions.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -36,6 +37,16 @@ namespace Persistence.Commands.EF
         public Task DeleteAsync(TEntity entity)
         {
             _commandDbContext.Set<TEntity>().Remove(entity);
+
+            return Task.CompletedTask;
+        }
+
+        public Task UpdateAllAsync(ICollection<TEntity> entities)
+        {
+            foreach (var entry in entities)
+            {
+                _commandDbContext.Entry(entry).State = EntityState.Modified;
+            }            
 
             return Task.CompletedTask;
         }

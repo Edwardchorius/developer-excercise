@@ -1,4 +1,6 @@
 ﻿
+using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Domain.Abstractions.Interfaces;
 
@@ -10,6 +12,7 @@ namespace Persistence.Abstractions.Interfaces
         Task<TEntity> AddAsync(TEntity entity);
 
         Task UpdateAsync(TEntity entity);
+        Task UpdateAllAsync(ICollection<TEntity> entities);
 
         Task DeleteAsync(TEntity entity);
     }

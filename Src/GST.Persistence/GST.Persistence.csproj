@@ -5,8 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Configurations\**" />
+    <EmbeddedResource Remove="Configurations\**" />
+    <None Remove="Configurations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\GST.Application.Commands\GST.Application.Commands.csproj" />
     <ProjectReference Include="..\GST.Persistence.Commands\GST.Persistence.Commands.csproj" />
+    <ProjectReference Include="..\GST.Persistence.Queries\GST.Persistence.Queries.csproj" />
     <ProjectReference Include="..\Persistence.Abstractions\Persistence.Abstractions.csproj" />
   </ItemGroup>
 

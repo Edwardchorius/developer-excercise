@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Persistence.Abstractions.Interfaces;
 
 namespace GST.Api
 {
@@ -36,6 +37,9 @@ namespace GST.Api
                     var commandContext = scope.ServiceProvider.GetService<ProductCommandContext>();
                     commandContext.Database.EnsureDeleted();
                     commandContext.Database.EnsureCreated();
+
+                    var dataSeeder = scope.ServiceProvider.GetService<IDataSeedingService>();
+                    dataSeeder.Seed();
                 }
                 catch (Exception e)
                 {

@@ -8,8 +8,6 @@ namespace Persistence.Abstractions.Interfaces
     public interface IReadableRepository<TEntity>
         where TEntity : class
     {
-        //Task<TEntity> SingleOrDefaultAsync();
-        //Task<IReadOnlyList<TEntity>> GetAllAsync();
-        //Task<bool> AnyAsync();
+        Task<IReadOnlyCollection<TEntity>> GetByNameAsync(string[] names);
     }
 }

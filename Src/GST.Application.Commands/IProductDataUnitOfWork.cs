@@ -7,5 +7,7 @@ namespace GST.Application.Commands
     public interface IProductDataUnitOfWork : IDataUnitOfWork
     {
         IMutatableRepository<Product> Products { get; }
+        IReadableRepository<Product> ReadProducts { get; }
+
     }
 }

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GST.Api.Controllers.Base;
 using GST.Api.Models.Request;
+using GST.Api.Models.Response;
 using GST.Application.Commands.Features.CalculateTotalSum;
 using GST.Application.Commands.Models.InputModels;
 using MediatR;
@@ -17,16 +18,14 @@ namespace GST.Api.Controllers
         {
         }
 
-        [HttpGet("[action]")]
-        public async Task<ActionResult<double>> Test([FromQuery] TestRequestModel request)
-        {
-            ProductsInputModel[]? productsInputModels = request.Products.Select(k => new ProductsInputModel(k.Name, k.PriceValue)).ToArray();
-            DealInputModel[]? dealsInputModels = request.Deals.Select(k => new DealInputModel(k.Name, productsInputModels)).ToArray();
+        [HttpPost("[action]")]
+        public async Task<ActionResult<double>> Test([FromBody] ScannedProductsRequest request)
+        {            
+            var command = new CalculcateTotalSumCommand(request.Products.Names, request.Deals.Name, request.Deals.ProductsInvolved);
+            ScannedProductsResponse response = new ScannedProductsResponse();
+            response.FinalPrice = await Mediator.Send(command);
 
-            var command = new CalculcateTotalSumCommand(productsInputModels, dealsInputModels);
-            var result = await Mediator.Send(command);
-
-            return Ok(result);
+            return Ok(response.FinalPrice);
         }
     }
 }

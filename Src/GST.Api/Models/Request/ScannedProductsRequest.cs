@@ -6,9 +6,9 @@ using GST.Api.Models.DTOs;
 
 namespace GST.Api.Models.Request
 {
-    public class TestRequestModel
+    public class ScannedProductsRequest
     {
-        public ProductDTO[] Products { get; set; }
-        public DealDTO[] Deals { get; set; }
+        public ProductsDTO Products { get; set; }
+        public DealDTO Deals { get; set; }
     }
 }

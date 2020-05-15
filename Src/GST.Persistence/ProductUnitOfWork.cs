@@ -15,15 +15,18 @@ namespace GST.Persistence
         public ProductUnitOfWork(
             ProductCommandContext commandContext,
             IMutatableRepository<Product> products,
-            IMutatableRepository<Deal> deals)
+            IMutatableRepository<Deal> deals,
+            IReadableRepository<Product> readProducts)
         {
             _commandContext = commandContext;
             Products = products;
             Deals = deals;
+            ReadProducts = readProducts;
         }
 
         public IMutatableRepository<Product> Products { get; }
         public IMutatableRepository<Deal> Deals { get; }
+        public IReadableRepository<Product> ReadProducts { get; set; }
 
         public bool HasActiveTransaction => _commandContext.HasActiveTransaction;
 

@@ -7,7 +7,7 @@ using GST.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace GST.Persistence.Commands.Configurations
+namespace GST.Persistence.Queries.Configurations
 {
     internal class ProductConfiguration : BaseConfiguration<Product>
     {

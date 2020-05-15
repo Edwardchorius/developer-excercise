@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace GST.Api.Models.DTOs
 {
-    public class ProductDTO
+    public class ProductsDTO
     {
-        public string Name { get; set; }
-        public double PriceValue { get; set; }
+        public string[] Names { get; set; }
     }
 }

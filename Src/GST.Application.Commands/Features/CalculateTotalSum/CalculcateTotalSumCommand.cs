@@ -8,13 +8,15 @@ namespace GST.Application.Commands.Features.CalculateTotalSum
 {
     public class CalculcateTotalSumCommand : Command<double>
     {
-        public CalculcateTotalSumCommand(ProductsInputModel[] products, DealInputModel[] deals)
+        public CalculcateTotalSumCommand(string[] products, string deal, string[] productsForDeals)
         {
             Products = products;
-            Deals = deals;
+            Deal = deal;
+            ProductsForDeals = productsForDeals;
         }
 
-        public ProductsInputModel[] Products { get; set; }
-        public DealInputModel[] Deals { get; set; }
+        public string[] Products { get; set; }
+        public string Deal { get; set; }
+        public string[] ProductsForDeals { get; set; }
     }
 }

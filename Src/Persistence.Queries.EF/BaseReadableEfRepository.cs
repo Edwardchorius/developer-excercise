@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using GST.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Persistence.Abstractions.Interfaces;
 
@@ -17,10 +18,10 @@ namespace Persistence.Queries.EF
             _readableDbContext = readableDbContext;
         }
 
-        //public async Task<TEntity> SingleOrDefaultAsync()
-        //{
-
-        //}
+        public Task<IReadOnlyCollection<TEntity>> GetByNameAsync(string[] names)
+        {
+            return null;
+        }
 
         //public async Task<IReadOnlyList<TEntity>> GetAllAsync()
         //{
@@ -29,7 +30,7 @@ namespace Persistence.Queries.EF
 
         //public async Task<bool> AnyAsync()
         //{
-            
+
         //}
     }
 }

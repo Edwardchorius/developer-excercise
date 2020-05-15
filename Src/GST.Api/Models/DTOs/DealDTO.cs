@@ -8,6 +8,6 @@ namespace GST.Api.Models.DTOs
     public class DealDTO
     {
         public string Name { get; set; }
-        public ProductDTO[] ProductsInvolved { get; set; }
+        public string[] ProductsInvolved { get; set; }
     }
 }

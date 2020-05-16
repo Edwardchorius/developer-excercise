@@ -1,67 +1,70 @@
 # Developer Exercise
 
-This update on the original ReadMe file is intented to provide a brief explanation of the current author's chance to provide an architecture and an overall idea of an implementation of the initial project requirements.
+This exercise is designed to demonstrate a candidate's abilities across a range of competencies in software development (The applicant can pick any language of their preference)
 
+## Instructions
 
-## Project Structure
-This is the initial project structure
+1. Fork the repository
+2. Implement a solution of the `Requirements` (feel free to use any helper packages/frameworks that you think think will be of help)
+3. Share the forked repository
 
-![Image description](Images/ProjectStructure1.png)
-There are 5 folders.
+## "Business" Requirements
 
-Starting from the **first**:
-![Image description](Images/ProjectStructure2.png)
-The Core folder contains 3 projects:
-- Application.Commands
-- Application.Queries
-- Domain
+- Create a basic Groceries Shop till which can `scan` fruits and vegetables of different types, producing a numeric result/bill in the end. Assume the currency is called `aws` and there is `100 cloud ('c' for short)` in 1 aws
+- Apart from simply adding the value of each product, the till should contain logic for the following special deals:
+  - `2 for 3` - for a given selection of items (customer buys 3 items but only pays for the value of 2 of them, the cheapest one is free). In case there are more than 3 items that are included in the `2 for 3` deal, the first 3 items are included.
+    Example Deal ["banana", "orange", "tomato"], example items scanned ["banana", "orange", "orange", "tomato"] - the tomato is not included in the discount (the cheaper of `banana` or `orange` will be subtracted)
+  - `buy 1 get 1 half price` - for a given selection of items (if the customer buys a given product under such offer, they receive a 50% reduction in the price of a second item of the same type)
+- The till should be `programmable` so that whoever runs it can define 2 inputs:
+  - The list of items supported by the till - each item with a given "price", "name"
+  - Once a new item is added to the till, the administrator should be able to add it to any of the 2 special deals defined above
+  - You should be able to scan a list of items and see the end price (any special deal discounts should be subtracted)
 
-**Second**: Application
-![Image description](Images/ProjectStructure3.png)
-- Persistence
-- Persistence.Commands
-- Persistence.Queries
+### Example:
 
-**Third**: Libs
-![Image description](Images/ProjectStructure4.png)
-- Mediator folder, containing projects related to the setup of the Mediator
-- Persistence folder, containing projects related to the overall abstraction layer for the persistence layer.
-- Domain project, related to the overall abstraction of the domain layer in the project
-- ExceptionHandlingMiddleware, providing a pipeline for handling thrown exceptions
+Input groceries:
 
-**Forth**: Presentation
-![Image description](Images/ProjectStructure5.png)
-- Api, which serves as an endpoint for clients( i.e. Angular client, React client, etc)
+| Product | Price |
+| ------- | :---: |
+| apple   |  50c  |
+| banana  |  40c  |
+| tomato  |  30c  |
+| potato  |  26c  |
 
-**Fifth**: UnitTests
-![Image description](Images/ProjectStructure6.png)
-- Test project for tests related to the business layer
+Input deals:
 
-                                            
-## The Idea behind all of this
+- `2 for 3` - ["apple", "banana", "tomato"]
+- `buy 1 get 1 half price` - potato
 
-Since the initial requirements stated that the author should choose a way of implementing
-a solution to the problem, I chose the **Onion Architecture**. I was after a clean architecture, meaning following as much as possible rules associated with the **Clean** model. In this case, I wanted to put the **Domain** & **Application** layers in the centre, meaning all other layers, such as **Persistence**, other **Infrastructure** layers, **Presentation** & **Tests** are coupled to the Application Core, not the other way around. This means following a dependency rule **Outwards to Inwards**.
+Example scanned customer basket: "apple", "banana", "banana", "potato", "tomato", "banana", "potato"
 
-The **Libs** folder with its purpose mentioned above servers as a "common" folder for other services if it were a microservices architecture. It could be extended to provide abstractions for other ORM's, other Mediator functionality, but the purpose is to define how other potential microservices, if added, could use the overall base Abstraction for its persistence (if it were to use EF then it would use the Persistence related to EF, defined in the Presentation folder).
+Expected Output: `1 aws and 99 clouds`
+Explanation:
 
-## CQRS
-One thing to notice is the decision to use a separate persistence project for PUT/POST/DELETE & a separate persistence project for /GET. This is an attempt to 
-implement the CQRS pattern, without event sourcing **AND** using a **single DB** for both commands and queries. The idea was to provide something which could be extendable, maintainable and scalable. That is why the decision was made by the author to showcase a potential for the CQRS here, even though for the initial project requirements this is an overall **overkill**.
+The items are processed(Scanned) in order:
 
-## Mediator
-The mediator pattern is also something, which provides a potential for writing shorter code in the controller action's and to provide a good feature structure in the application layer. Once again, this is an overkill, but if the project were to scale, this would come in handy. With the **MediatR**, one could build up pipeline behaviors, such as for **Logging**, **Validation** (something which is unfortunately not seen in the current implementation, but could in a day be provided), **ExceptionHandling** etc. This will act as filters, meaning if configured in the Startup and implemented in the MediatorBuilder, each request would pass through these pipelines. The only behavior implemented in the current project is the **Persistence**, which brings us to the use of **UoW** pattern.
+- "apple", "banana", "banana" are picked up for the `2 for 3` deal and 1 of the bananas is free - total cost `90c`
 
-## UnitOfWork  
+- "potato", "tomato", "banana", "potato" are left. There is a `buy 1 get 1 half price` for potatoes, meaning the second potato will be half price (13c) so it will be `39c` for both
 
-If one would use multiple different databases or other storages (like filesystems etc) and would want to coordinate multiple operations on these many potential storages in a **single transaction**, he would benefit a lot from the UoW. Once again, it was briefly introduced here in order to show the its potential, serving as an feature, providing better maintainability.
+- The other 2 items scanned `tomato` and `banana` are not part of any deals so they are charged their basic price `70c` total
 
-## Testing
-Last but not least, the tests. Surely the **clean** architecture provides for better testability. One could test the whole application layer and if he were to use **DDD** and write many logic in each domain model (currently that is not the case the business requirements for the current project are way too puny) he could also test each method in each Aggregate.
+The total amount the is equal to: `90c + 39c + 70c = 1 aws and 99 clouds` (199 clouds = 1.99 aws)
 
+## Grading
 
-Overall I tried to stick to the business requirements but prioritized mainly the architecture.
+You will be scored on the following:
 
+- Code cleanliness and ease of understandability
+- Code tests
+- Code reusability
+- Code modularity (i.e. ease of extension)
+- Documentation
 
+## Demonstrable concepts
 
- 
+You are free to make your solution to this exercise as simple or as complicated as you want based off the above criteria. The end result can come in the for of either of the options below:
+
+- REST/HTTP API
+- User interface (web app)
+- Application CLI

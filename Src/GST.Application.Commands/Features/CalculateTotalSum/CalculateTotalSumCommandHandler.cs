@@ -27,6 +27,8 @@ namespace GST.Application.Commands.Features.CalculateTotalSum
 
             var pricePerProduct = new Dictionary<string, double>();
             var productsFromDB = await _data.ReadProducts.GetByNameAsync(productsToScan.Distinct().ToArray());
+
+
             pricePerProduct = productsFromDB.ToDictionary(k => k.Name, v => v.Price);
             double initialSum = productsFromDB.Sum(k => k.Price * productsToScan.Where(pr => pr == k.Name).Count());
 

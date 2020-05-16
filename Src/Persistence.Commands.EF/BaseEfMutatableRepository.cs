@@ -43,6 +43,10 @@ namespace Persistence.Commands.EF
 
         public Task UpdateAllAsync(ICollection<TEntity> entities)
         {
+            //using(var context = new CommandDbContext())
+            //{
+
+            //}
             foreach (var entry in entities)
             {
                 _commandDbContext.Entry(entry).State = EntityState.Modified;

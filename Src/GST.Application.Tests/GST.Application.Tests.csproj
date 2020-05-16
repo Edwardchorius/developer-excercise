@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="8.0.1" />
+    <PackageReference Include="Moq" Version="4.14.1" />
+    <PackageReference Include="nunit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GST.Application.Commands\GST.Application.Commands.csproj" />
+    <ProjectReference Include="..\GST.Domain\GST.Domain.csproj" />
+    <ProjectReference Include="..\GST.Persistence\GST.Persistence.csproj" />
+    <ProjectReference Include="..\Mediator.Abstractions\Mediator.Abstractions.csproj" />
+    <ProjectReference Include="..\Persistence.Abstractions\Persistence.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

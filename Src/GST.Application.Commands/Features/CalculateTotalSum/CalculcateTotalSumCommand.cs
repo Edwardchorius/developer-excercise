@@ -15,8 +15,8 @@ namespace GST.Application.Commands.Features.CalculateTotalSum
             ProductsForDeals = productsForDeals;
         }
 
-        public string[] Products { get; set; }
-        public string Deal { get; set; }
-        public string[] ProductsForDeals { get; set; }
+        public string[] Products { get; private set; }
+        public string Deal { get; private set; }
+        public string[] ProductsForDeals { get; private set; }
     }
 }

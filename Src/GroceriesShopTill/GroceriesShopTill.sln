@@ -11,43 +11,45 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{4CDD1049-984C-4F26-90F8-2835A78A7B89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GST.Domain", "..\GST.Domain\GST.Domain.csproj", "{3B38C8EE-A3B9-4C8A-9132-770C477DB960}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GST.Domain", "..\GST.Domain\GST.Domain.csproj", "{3B38C8EE-A3B9-4C8A-9132-770C477DB960}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GST.Application.Commands", "..\GST.Application.Commands\GST.Application.Commands.csproj", "{023F9E45-8045-4925-90EB-1760A1C795E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GST.Application.Commands", "..\GST.Application.Commands\GST.Application.Commands.csproj", "{023F9E45-8045-4925-90EB-1760A1C795E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GST.Application.Queries", "..\GST.Application.Queries\GST.Application.Queries.csproj", "{8174C093-B5DF-483F-8E48-6DA34DC7FD11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GST.Application.Queries", "..\GST.Application.Queries\GST.Application.Queries.csproj", "{8174C093-B5DF-483F-8E48-6DA34DC7FD11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GST.Persistence", "..\GST.Persistence\GST.Persistence.csproj", "{B72C9865-A746-48E5-B0DD-105EBAA269EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GST.Persistence", "..\GST.Persistence\GST.Persistence.csproj", "{B72C9865-A746-48E5-B0DD-105EBAA269EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GST.Persistence.Commands", "..\GST.Persistence.Commands\GST.Persistence.Commands.csproj", "{E7706AD5-44C1-4DC7-BF78-45AAF445513E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GST.Persistence.Commands", "..\GST.Persistence.Commands\GST.Persistence.Commands.csproj", "{E7706AD5-44C1-4DC7-BF78-45AAF445513E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GST.Persistence.Queries", "..\GST.Persistence.Queries\GST.Persistence.Queries.csproj", "{19E45A8D-F75F-4433-9BDD-178076EDC75C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GST.Persistence.Queries", "..\GST.Persistence.Queries\GST.Persistence.Queries.csproj", "{19E45A8D-F75F-4433-9BDD-178076EDC75C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GST.Api", "..\GST.Api\GST.Api.csproj", "{FB417BE8-B4D5-4E55-BAE4-CD224EFA301D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GST.Api", "..\GST.Api\GST.Api.csproj", "{FB417BE8-B4D5-4E55-BAE4-CD224EFA301D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{837F75C8-296E-4669-A4DC-3159EC00F64B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Abstractions", "..\Domain.Abstractions\Domain.Abstractions.csproj", "{BEAE628D-2AA9-42FA-A879-D843535CB68F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Abstractions", "..\Domain.Abstractions\Domain.Abstractions.csproj", "{BEAE628D-2AA9-42FA-A879-D843535CB68F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{B1B83FF3-3EC4-40A2-90F8-53834C439EEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence.Abstractions", "..\Persistence.Abstractions\Persistence.Abstractions.csproj", "{C0DCF1A6-498B-4FDA-9429-8260AA483648}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence.Abstractions", "..\Persistence.Abstractions\Persistence.Abstractions.csproj", "{C0DCF1A6-498B-4FDA-9429-8260AA483648}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence.Commands.EF", "..\Persistence.Commands.EF\Persistence.Commands.EF.csproj", "{BA142BC4-FC80-482F-BC3F-2B7628551C25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence.Commands.EF", "..\Persistence.Commands.EF\Persistence.Commands.EF.csproj", "{BA142BC4-FC80-482F-BC3F-2B7628551C25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence.Queries.EF", "..\Persistence.Queries.EF\Persistence.Queries.EF.csproj", "{F1528970-2933-40BB-9D13-AC2481C3681B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence.Queries.EF", "..\Persistence.Queries.EF\Persistence.Queries.EF.csproj", "{F1528970-2933-40BB-9D13-AC2481C3681B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mediator", "Mediator", "{1AD1B21C-B523-4785-A654-B2A9B5016E4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediator.Abstractions", "..\Mediator.Abstractions\Mediator.Abstractions.csproj", "{99BEE579-417C-4CDC-8825-C887DF14130D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mediator.Abstractions", "..\Mediator.Abstractions\Mediator.Abstractions.csproj", "{99BEE579-417C-4CDC-8825-C887DF14130D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Behaviors", "Behaviors", "{2BF393C0-37A0-4E5C-BB29-8044CBD15D35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediator.Behaviors.Persistence", "..\Mediator.Behaviors.Persistence\Mediator.Behaviors.Persistence.csproj", "{DA7F186E-EF26-4329-A06F-4A9D7A04BF87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mediator.Behaviors.Persistence", "..\Mediator.Behaviors.Persistence\Mediator.Behaviors.Persistence.csproj", "{DA7F186E-EF26-4329-A06F-4A9D7A04BF87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediator.DependencyRegistration", "..\Mediator.DependencyRegistration\Mediator.DependencyRegistration.csproj", "{17C555FB-7468-41EE-8B1C-9B857C3E09F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mediator.DependencyRegistration", "..\Mediator.DependencyRegistration\Mediator.DependencyRegistration.csproj", "{17C555FB-7468-41EE-8B1C-9B857C3E09F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.ExceptionHandlingMiddleware", "..\ExceptionHandlingMiddleware\Web.ExceptionHandlingMiddleware.csproj", "{808CBF97-175A-4EFF-ABCE-AE1CAA6D2F06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.ExceptionHandlingMiddleware", "..\ExceptionHandlingMiddleware\Web.ExceptionHandlingMiddleware.csproj", "{808CBF97-175A-4EFF-ABCE-AE1CAA6D2F06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GST.Application.Tests", "..\GST.Application.Tests\GST.Application.Tests.csproj", "{E4DDE48B-85A1-46DC-B493-73BB17543C8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -115,6 +117,10 @@ Global
 		{808CBF97-175A-4EFF-ABCE-AE1CAA6D2F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{808CBF97-175A-4EFF-ABCE-AE1CAA6D2F06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{808CBF97-175A-4EFF-ABCE-AE1CAA6D2F06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4DDE48B-85A1-46DC-B493-73BB17543C8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4DDE48B-85A1-46DC-B493-73BB17543C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4DDE48B-85A1-46DC-B493-73BB17543C8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4DDE48B-85A1-46DC-B493-73BB17543C8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -138,6 +144,7 @@ Global
 		{DA7F186E-EF26-4329-A06F-4A9D7A04BF87} = {2BF393C0-37A0-4E5C-BB29-8044CBD15D35}
 		{17C555FB-7468-41EE-8B1C-9B857C3E09F9} = {1AD1B21C-B523-4785-A654-B2A9B5016E4C}
 		{808CBF97-175A-4EFF-ABCE-AE1CAA6D2F06} = {837F75C8-296E-4669-A4DC-3159EC00F64B}
+		{E4DDE48B-85A1-46DC-B493-73BB17543C8B} = {4CDD1049-984C-4F26-90F8-2835A78A7B89}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {73FD9473-C974-4B26-A115-98C704D4DA3A}

@@ -38,5 +38,7 @@ The Core folder contains 3 projects:
 - Test project for tests related to the business layer
 
                                             
-                                                          ##The idea
+##The idea
+
+
  
